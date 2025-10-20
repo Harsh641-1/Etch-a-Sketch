@@ -35,3 +35,17 @@ h1 {
     margin-bottom: 10px;
     color: #293241;
 }
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #3d5a80;
+    color: white;
+    border: 1px white solid;
+    font-size: 20px;
+}
