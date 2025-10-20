@@ -15,8 +15,14 @@ function createGrid(){
 
     }
 }
-
 createGrid()
 
+const items = document.querySelectorAll('.item')
+
+items.forEach((item) => {
+    item.addEventListener('mouseenter', () => {
+        item.style.backgroundColor = "#ee6c4d"
+    })
+})
 
 
