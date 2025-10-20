@@ -1,4 +1,5 @@
 const container = document.querySelector('.container')
+colors = ['']
 
 
 function createGrid(numberOfSquare = 16){
@@ -16,13 +17,13 @@ function createGrid(numberOfSquare = 16){
 
     }
     const items = document.querySelectorAll('.item')
-
     items.forEach((item) => {
     item.addEventListener('mouseenter', () => {
-        item.style.backgroundColor = "#ee6c4d"
-    })
+    item.style.backgroundColor = "#ee6c4d"
+})
 })
 
+    
 
 }
 
@@ -44,7 +45,38 @@ function removeGrid(){
     })
 }
 
+function getRandomElement(arr){
+    const randomIndex = Math.floor(Math.random() * arr.length)
+    return arr[randomIndex]
+}
+
+function changeToRgb(){
+    const rgb = ['red', 'blue', 'green','red', 'blue', 'green','red', 'blue', 'green']
+
+    const items = document.querySelectorAll('.item')
+    items.forEach((item) => {
+    item.addEventListener('mouseenter', () => {
+    item.style.backgroundColor = getRandomElement(rgb)
+})
+})
+
+    
+}
+
 createGrid()
 
 const button = document.querySelector('button')
 button.addEventListener('click', resize)
+
+const rbgbutton = document.querySelector('.rgb')
+rbgbutton.addEventListener('click', changeToRgb)
+
+const reset = document.querySelector('.reset-color')
+reset.addEventListener('click', () => {
+    const items = document.querySelectorAll('.item')
+    items.forEach((item) => {
+    item.addEventListener('mouseenter', () => {
+    item.style.backgroundColor = "#ee6c4d"
+})
+})
+})
